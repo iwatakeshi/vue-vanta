@@ -2,9 +2,11 @@
   "name": "vue-vanta",
   "version": "0.1.0",
   "private": true,
+  "main": "./dist/vanta.common.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "build:bundle": "vue-cli-service build --target lib --name Vanta ./src/components/index.js",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit"
   },
@@ -24,5 +26,12 @@
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "vue-template-compiler": "^2.6.10"
-  }
+  },
+  "files": [
+    "dist/*",
+    "src/*",
+    "public/*",
+    "*.json",
+    "*.js"
+  ]
 }
