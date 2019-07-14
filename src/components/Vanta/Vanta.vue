@@ -1,12 +1,17 @@
 <template>
   <div>
     <div
-      :id="`${vantaId}`"
+      class="vanta-container"
+      :id="vantaId"
       v-if="enabled"
     >
       <slot />
     </div>
-    <div v-else>
+    <div
+      class="vanta-container"
+      :id="vantaId"
+      v-else
+    >
       <slot />
     </div>
   </div>
@@ -78,3 +83,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.vanta-container {
+  height: 100%;
+}
+</style>
