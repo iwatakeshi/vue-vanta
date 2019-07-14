@@ -1,7 +1,7 @@
 <template>
   <div>
     <div
-      :id="``"
+      :id="`${vantaId}`"
       v-if="enabled"
     >
       <slot />
@@ -38,7 +38,9 @@ export default {
     }
   },
   beforeMount () {
-    this.setup()
+    if (this.enabled) {
+      this.setup()
+    }
   },
   methods: {
     setup () {
