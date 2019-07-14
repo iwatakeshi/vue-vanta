@@ -1,6 +1,14 @@
 <template>
-  <div :id="`${vantaId}`">
-    <slot />
+  <div>
+    <div
+      :id="``"
+      v-if="enabled"
+    >
+      <slot />
+    </div>
+    <div v-else>
+      <slot />
+    </div>
   </div>
 </template>
 
@@ -23,13 +31,17 @@ export default {
     vantaId: {
       type: String,
       default: () => 'vanta-1'
+    },
+    enabled: {
+      type: Boolean,
+      default: () => true
     }
   },
-  beforeMount() {
+  beforeMount () {
     this.setup()
   },
   methods: {
-    setup() {
+    setup () {
       // Normalize the url
       const normalize = string =>
         string.substr(-1) === '/'
