@@ -3,11 +3,9 @@ import * as components from './components'
 const ComponentLibary = {
   install(Vue) {
     // components
-    for (const componentName in components) {
-      const component = components[componentName]
-
-      Vue.component(component.name, component)
-    }
+    Object.keys(components).forEach(name => {
+      Vue.component(name, components[name])
+    })
   }
 }
 

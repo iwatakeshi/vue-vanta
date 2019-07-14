@@ -7,7 +7,7 @@
 <script>
 
 export default {
-  name: 'vanta',
+  name: 'vue-vanta',
   props: {
     effect: {
       type: String,

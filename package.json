@@ -2,11 +2,13 @@
   "name": "vue-vanta",
   "version": "0.1.0",
   "private": true,
-  "main": "./dist/vanta.common.js",
+  "main": "./dist/vue-vanta.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "build:bundle": "vue-cli-service build --target lib --name Vanta ./src/components/index.js",
+    "build:bundle": "vue-cli-service build --target lib --name vue-vanta ./src/components/index.js",
+    "build:wc": "vue-cli-service build --target wc --name vue-vanta './src/components/*/*.vue'",
+    "build:wc:async": "vue-cli-service build --target wc-async --name vue-vanta './src/components/*/*.vue'",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit"
   },
