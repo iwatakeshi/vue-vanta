@@ -31,7 +31,7 @@ export default {
     },
     src: {
       type: String,
-      default: () => 'http://iwatakeshi.github.io/js/vanta'
+      default: () => 'https://cdn.jsdelivr.net/gh/tengbao/vanta@master/dist'
     },
     vantaId: {
       type: String,
@@ -40,6 +40,10 @@ export default {
     enabled: {
       type: Boolean,
       default: () => true
+    },
+    threeVersion: {
+      type: Number,
+      default: () => 101
     }
   },
   beforeMount () {
@@ -56,14 +60,15 @@ export default {
           : string
       const url = normalize(this.src)
 
-      // Create the script
+      // Create the script for threejs
       const threejs = document.createElement('script')
       threejs.async = true
       threejs.defer = true
       threejs.id = 'three'
-      threejs.src = `${url}/three.r92.min.js`
+      threejs.src = `https://cdnjs.cloudflare.com/ajax/libs/three.js/${this.threeVersion}/three.min.js`
       document.head.appendChild(threejs)
-      // Load the script
+      
+      // Create the script for Vanta
       threejs.onload = () => {
         const vantaScript = document.createElement('script')
         vantaScript.async = true

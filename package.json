@@ -1,7 +1,6 @@
 {
   "name": "vue-vanta",
   "version": "0.1.0",
-  "private": true,
   "main": "src/components/Vanta/Vanta.vue",
   "scripts": {
     "serve": "vue-cli-service serve",
